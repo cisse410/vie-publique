@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intro_provider_state_management/models/news.dart';
 import 'package:intro_provider_state_management/models/news_data.dart';
+import 'package:intro_provider_state_management/pages/pratice.dart';
 import 'package:provider/provider.dart';
 
 import 'pages/stories.dart';
@@ -21,8 +23,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: ChangeNotifierProvider(
-        create: (context) => NewsData(),
-        builder: (context, child) => const StoriesPage(),
+        create: (context) => News(),
+        builder: (context, child) => const Pratice(),
       ),
     );
   }
