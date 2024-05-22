@@ -14,7 +14,7 @@ class NewsData with ChangeNotifier {
 
   Future<void> get fetchData async {
     final response = await get(Uri.parse(
-        'https://www.dropbox.com/scl/fi/ot3mophsnu2hgu2ezyirr/stories.json?rlkey=62pelfk98igcjfs16aep3d45p&st=rp5po55v&dl=0'));
+        'https://dl.dropbox.com/scl/fi/ot3mophsnu2hgu2ezyirr/stories.json?rlkey=62pelfk98igcjfs16aep3d45p&st=rp5po55v&dl=0'));
 
     if (response.statusCode == 200) {
       try {

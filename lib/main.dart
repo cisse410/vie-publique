@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intro_provider_state_management/models/news_data.dart';
+import 'package:provider/provider.dart';
 
 import 'pages/stories.dart';
 
@@ -18,7 +20,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
         useMaterial3: true,
       ),
-      home: const StoriesPage(),
+      home: ChangeNotifierProvider(
+        create: (context) => NewsData(),
+        builder: (context, child) => const StoriesPage(),
+      ),
     );
   }
 }
