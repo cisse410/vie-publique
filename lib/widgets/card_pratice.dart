@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intro_provider_state_management/pages/new_page.dart';
 import 'package:share_plus/share_plus.dart';
 
-class MainCard extends StatelessWidget {
-  const MainCard({super.key, required this.newsData});
+class ActuCard extends StatelessWidget {
+  const ActuCard({super.key, required this.newsData});
 
   final Map<String, dynamic> newsData;
 
@@ -31,12 +31,13 @@ class MainCard extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => NewsPage(news: newsData)),
+                      builder: (context) => NewsPage(news: newsData),
+                    ),
                   );
                 },
                 icon: const Icon(Icons.library_books_outlined),
                 label: const Text(
-                  'Read more',
+                  'Voir plus',
                 ),
                 style: IconButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.primary,
@@ -45,7 +46,7 @@ class MainCard extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () async {
-                  const url = 'https://www.univ-thies.sn';
+                  const url = 'https://www.vie-publique.sn/';
                   await Share.share(
                     'J\'ai trouvé un article important que je voudrais partager avec vous $url',
                   );
@@ -54,9 +55,9 @@ class MainCard extends StatelessWidget {
                   Icons.share,
                   color: Theme.of(context).colorScheme.primary,
                 ),
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

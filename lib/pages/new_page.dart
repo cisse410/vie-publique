@@ -20,7 +20,7 @@ class NewsPage extends StatelessWidget {
           }
         }
       } catch (e) {
-        print(e.toString());
+        debugPrint(e.toString());
       }
     }
 
@@ -38,108 +38,88 @@ class NewsPage extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: GestureDetector(
               onTap: () async {
-                const url = 'https://www.univ-thies.sn';
+                const url = 'https://www.vie-publique.sn/';
                 await Share.share(
                     'J\'ai trouvé un article important que je voudrais partager avec vous $url');
               },
-              child: const Icon(
-                Icons.notifications_none,
+              child: const FaIcon(
+                FontAwesomeIcons.share,
+                size: 30,
                 color: Colors.white,
               ),
             ),
-          )
+          ),
         ],
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            Image.network('${news['image']}'),
+            const SizedBox(
+              height: 13,
+            ),
+            Text(
+              '${news['story']}',
+              textAlign: TextAlign.justify,
+              style: const TextStyle(
+                fontSize: 15,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 50,
+            ),
+            const Text(
+              'L\'actualité continue sur nos differents réseaux sociaux',
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.network('${news['image']}'),
-                const SizedBox(
-                  height: 13,
-                ),
-                Text(
-                  '${news['story']}',
-                  textAlign: TextAlign.justify,
-                  style: const TextStyle(
-                    fontSize: 15,
+                GestureDetector(
+                  onTap: () => launcherURL(
+                    Uri.parse('https://x.com/ViePubliqueSN'),
+                    true,
+                  ),
+                  child: const FaIcon(
+                    FontAwesomeIcons.xTwitter,
+                    size: 60,
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                GestureDetector(
+                  onTap: () {},
+                  child: FaIcon(
+                    FontAwesomeIcons.envelope,
+                    size: 60,
+                    color: Colors.blue[300],
+                  ),
                 ),
-                const Divider(),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    FaIcon(
-                      FontAwesomeIcons.heart,
-                      size: 30,
+                GestureDetector(
+                  onTap: () => launcherURL(
+                    Uri.parse(
+                      'https://www.linkedin.com/company/vie-publique-sn',
                     ),
-                    FaIcon(
-                      FontAwesomeIcons.comment,
-                      size: 30,
-                    ),
-                    FaIcon(
-                      FontAwesomeIcons.bookmark,
-                      size: 30,
-                    ),
-                    FaIcon(
-                      FontAwesomeIcons.share,
-                      size: 30,
-                    ),
-                  ],
+                    true,
+                  ),
+                  child: const FaIcon(
+                    FontAwesomeIcons.linkedin,
+                    size: 60,
+                    color: Colors.blue,
+                  ),
                 ),
-                const SizedBox(
-                  height: 50,
-                ),
-                const Text(
-                  'L\'actualité continue sur nos differents réseaux sociaux',
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        launcherURL(
-                            Uri.parse('https://www.facebook.com/tvxalaat'), true);
-                      },
-                      child: FaIcon(
-                        FontAwesomeIcons.facebook,
-                        size: 60,
-                        color: Colors.blue[700],
-                      ),
-                    ),
-                    const FaIcon(
-                      FontAwesomeIcons.xTwitter,
-                      size: 60,
-                    ),
-                    FaIcon(
-                      FontAwesomeIcons.telegram,
-                      size: 60,
-                      color: Colors.blue[300],
-                    ),
-                    GestureDetector(
-                      onTap: () => launcherURL(
-                          Uri.parse('https://www.linkedin.com/in/issakha-cisse'),
-                          true),
-                      child: const FaIcon(
-                        FontAwesomeIcons.linkedin,
-                        size: 60,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ],
-                ),
-                const Text(
-                  '#CISSE410',
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                )
               ],
             ),
-          ),
+            const Text(
+              '#Vie-Publique',
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
       ),
     );

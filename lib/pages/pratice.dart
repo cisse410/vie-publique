@@ -12,7 +12,7 @@ class Pratice extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'CBS News',
+          'Vie Publique',
           style: TextStyle(
               color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
         ),
@@ -31,7 +31,7 @@ class Pratice extends StatelessWidget {
                       : ListView.builder(
                           itemCount: value.news['stories'].length,
                           itemBuilder: (BuildContext context, int index) {
-                            return MainCard(
+                            return ActuCard(
                               newsData: value.news['stories'][index],
                             );
                           },

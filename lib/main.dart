@@ -1,8 +1,19 @@
+import 'package:amplitude_flutter/amplitude.dart';
 import 'package:flutter/material.dart';
-import 'package:intro_provider_state_management/widgets/bottom_navbar.dart';
+import 'package:provider/provider.dart';
+
+import 'models/news.dart';
+import 'pages/pratice.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  final Amplitude amplitude = Amplitude.getInstance();
+  amplitude.init('f3ba3fe86d0bfc3f73b2da27a7d9d8bf');
+  amplitude.logEvent('Sign Up');
+  debugPrint("Amplitude initialized successfully $amplitude");
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +28,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
         useMaterial3: true,
       ),
-      home: const BottomNavBar(),
+      home: ChangeNotifierProvider(
+        create: (context) => News(),
+        builder: (context, child) => const Pratice(),
+      ),
     );
   }
 }
