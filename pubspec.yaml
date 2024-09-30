@@ -41,6 +41,7 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   fluentui_icons: ^1.0.0
   amplitude_flutter: ^3.16.4
+  cached_network_image: ^3.4.0
 
 dev_dependencies:
   flutter_test:

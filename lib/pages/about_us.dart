@@ -19,7 +19,7 @@ class AboutUs extends StatelessWidget {
         name: "Malick Yacine DIOP",
         profession: "Ingénieur IT et entrepreneur",
         twitterLink: "https://x.com/malick_yacine",
-        linkedinLink: '',
+        linkedinLink: 'https://www.linkedin.com/in/malicktech/',
         facebookLink: '',
       ),
       const ContributorCard(
@@ -28,7 +28,8 @@ class AboutUs extends StatelessWidget {
         name: "Momar Assane DIOUF",
         profession: "Financier et entrepreneur",
         twitterLink: "https://x.com/Noo_IDcard",
-        linkedinLink: '',
+        linkedinLink:
+            'https://www.linkedin.com/in/assane-momar-diouf-a4b4b0a4/',
         facebookLink: '',
       ),
       const ContributorCard(
@@ -55,7 +56,7 @@ class AboutUs extends StatelessWidget {
         name: "Mamadou Diagne",
         profession: "Expert IT et entrepreneur",
         twitterLink: "https://x.com/dofbi",
-        linkedinLink: '',
+        linkedinLink: 'https://www.linkedin.com/in/dofbi/',
         facebookLink: '',
       ),
       const ContributorCard(
@@ -78,11 +79,11 @@ class AboutUs extends StatelessWidget {
       ),
       const ContributorCard(
         avatar:
-            "https://imgs.search.brave.com/xVub2fHwUd_sTxB4xYIlKLYP8CfjeV5mq1QETQh6xFQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9mL2ZkL0Zs/YWdfb2ZfU2VuZWdh/bC5zdmcvNTEycHgt/RmxhZ19vZl9TZW5l/Z2FsLnN2Zy5wbmc",
+            "https://media.licdn.com/dms/image/v2/C4D03AQH0uauUCUPmBQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1533025379423?e=1733356800&v=beta&t=Ak4g_f1RNpHwesOnYI-V91m4DEYW6sPeNGhzRR78Xps",
         name: "Ousmane Barry",
         profession: "Ingénieur en Intelligence artificielle et entrepreneur",
         twitterLink: '',
-        linkedinLink: '',
+        linkedinLink: 'https://www.linkedin.com/in/ousmanebarry/',
         facebookLink: '',
       ),
       const ContributorCard(
@@ -135,8 +136,8 @@ class AboutUs extends StatelessWidget {
             "https://pbs.twimg.com/profile_images/1824541584169304064/AohwzCDH_400x400.jpg",
         name: "Joe Diouf",
         profession: "Ingénieur Etude et Développement",
-        twitterLink: '',
-        linkedinLink: '',
+        twitterLink: 'https://x.com/joediouf_',
+        linkedinLink: 'https://www.linkedin.com/in/joseph-diouf-9a6201a8/ ',
         facebookLink: '',
       ),
       const ContributorCard(
@@ -201,6 +202,13 @@ Ce projet n'est, à ce jour, affilié à aucun gouvernement ou organisation poli
             const AboutUsTitle(
               title: "Participation et Contributions",
             ),
+            const AboutUsCard(
+              content:
+                  """Nous encourageons la communauté à participer et à contribuer à l'amélioration de cette plateforme. Si vous avez des compétences en développement web, en analyse de données, ou si vous souhaitez simplement nous transmettre des informations, suggérer des améliorations ou signaler des erreurs, n'hésitez pas à nous contacter""",
+            ),
+            const AboutUsTitle(
+              title: "Historique et Equipe projet",
+            ),
             SizedBox(
               height: 100,
               child: ListView.builder(
@@ -225,23 +233,26 @@ Ce projet n'est, à ce jour, affilié à aucun gouvernement ou organisation poli
                           builder: (context) {
                             return Container(
                               padding: const EdgeInsets.all(4),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  ContributorCard(
-                                    avatar: contributors[index].avatar,
-                                    name: contributors[index].name,
-                                    profession: contributors[index].profession,
-                                    twitterLink:
-                                        contributors[index].twitterLink,
-                                    linkedinLink:
-                                        contributors[index].linkedinLink,
-                                    facebookLink:
-                                        contributors[index].facebookLink,
-                                  ),
-                                ],
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ContributorCard(
+                                      avatar: contributors[index].avatar,
+                                      name: contributors[index].name,
+                                      profession:
+                                          contributors[index].profession,
+                                      twitterLink:
+                                          contributors[index].twitterLink,
+                                      linkedinLink:
+                                          contributors[index].linkedinLink,
+                                      facebookLink:
+                                          contributors[index].facebookLink,
+                                    ),
+                                  ],
+                                ),
                               ),
                             );
                           },
@@ -257,9 +268,6 @@ Ce projet n'est, à ce jour, affilié à aucun gouvernement ou organisation poli
                   );
                 },
               ),
-            ),
-            const AboutUsTitle(
-              title: "Historique et Equipe projet",
             ),
             const AboutUsTitle(
               title: "Contacts",

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intro_provider_state_management/pages/new_page.dart';
 import 'package:share_plus/share_plus.dart';
@@ -12,7 +13,7 @@ class ActuCard extends StatelessWidget {
     return Card(
       child: Column(
         children: [
-          Image.network('${newsData['image']}'),
+          CachedNetworkImage(imageUrl: '${newsData['image']}'),
           Text(
             '${newsData['heading']}',
             style: const TextStyle(fontSize: 19, fontWeight: FontWeight.bold),

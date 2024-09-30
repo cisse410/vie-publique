@@ -23,7 +23,7 @@ class ContributorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
+      padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 10, 61, 55),
         borderRadius: BorderRadius.circular(12),
@@ -63,10 +63,13 @@ class ContributorCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               GestureDetector(
-                onTap: () => launcherURL(
-                  Uri.parse(twitterLink),
-                  true,
-                ),
+                onTap: () {
+                  launcherURL(
+                    Uri.parse(twitterLink),
+                    true,
+                  );
+                  Navigator.of(context).pop();
+                },
                 child: const FaIcon(
                   FontAwesomeIcons.xTwitter,
                   size: 60,
@@ -74,10 +77,13 @@ class ContributorCard extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () => launcherURL(
-                  Uri.parse(facebookLink),
-                  true,
-                ),
+                onTap: () {
+                  launcherURL(
+                    Uri.parse(facebookLink),
+                    true,
+                  );
+                  Navigator.of(context).pop();
+                },
                 child: const FaIcon(
                   FontAwesomeIcons.facebook,
                   size: 60,
@@ -85,10 +91,13 @@ class ContributorCard extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () => launcherURL(
-                  Uri.parse(linkedinLink),
-                  true,
-                ),
+                onTap: () {
+                  launcherURL(
+                    Uri.parse(linkedinLink),
+                    true,
+                  );
+                  Navigator.of(context).pop();
+                },
                 child: const FaIcon(
                   FontAwesomeIcons.linkedinIn,
                   size: 60,
@@ -96,7 +105,7 @@ class ContributorCard extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
