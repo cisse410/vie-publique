@@ -51,92 +51,94 @@ class NewsPage extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Image.network('${news['image']}'),
-              const SizedBox(
-                height: 13,
-              ),
-              Text(
-                '${news['story']}',
-                textAlign: TextAlign.justify,
-                style: const TextStyle(
-                  fontSize: 15,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Image.network('${news['image']}'),
+                const SizedBox(
+                  height: 13,
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Divider(),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  FaIcon(
-                    FontAwesomeIcons.heart,
-                    size: 30,
+                Text(
+                  '${news['story']}',
+                  textAlign: TextAlign.justify,
+                  style: const TextStyle(
+                    fontSize: 15,
                   ),
-                  FaIcon(
-                    FontAwesomeIcons.comment,
-                    size: 30,
-                  ),
-                  FaIcon(
-                    FontAwesomeIcons.bookmark,
-                    size: 30,
-                  ),
-                  FaIcon(
-                    FontAwesomeIcons.share,
-                    size: 30,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              const Text(
-                'L\'actualité continue sur nos differents réseaux sociaux',
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      launcherURL(
-                          Uri.parse('https://www.facebook.com/tvxalaat'), true);
-                    },
-                    child: FaIcon(
-                      FontAwesomeIcons.facebook,
-                      size: 60,
-                      color: Colors.blue[700],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Divider(),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.heart,
+                      size: 30,
                     ),
-                  ),
-                  const FaIcon(
-                    FontAwesomeIcons.xTwitter,
-                    size: 60,
-                  ),
-                  FaIcon(
-                    FontAwesomeIcons.telegram,
-                    size: 60,
-                    color: Colors.blue[300],
-                  ),
-                  GestureDetector(
-                    onTap: () => launcherURL(
-                        Uri.parse('https://www.linkedin.com/in/issakha-cisse'),
-                        true),
-                    child: const FaIcon(
-                      FontAwesomeIcons.linkedin,
-                      size: 60,
-                      color: Colors.blue,
+                    FaIcon(
+                      FontAwesomeIcons.comment,
+                      size: 30,
                     ),
-                  ),
-                ],
-              ),
-              const Text(
-                '#CISSE410',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-              )
-            ],
+                    FaIcon(
+                      FontAwesomeIcons.bookmark,
+                      size: 30,
+                    ),
+                    FaIcon(
+                      FontAwesomeIcons.share,
+                      size: 30,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                const Text(
+                  'L\'actualité continue sur nos differents réseaux sociaux',
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        launcherURL(
+                            Uri.parse('https://www.facebook.com/tvxalaat'), true);
+                      },
+                      child: FaIcon(
+                        FontAwesomeIcons.facebook,
+                        size: 60,
+                        color: Colors.blue[700],
+                      ),
+                    ),
+                    const FaIcon(
+                      FontAwesomeIcons.xTwitter,
+                      size: 60,
+                    ),
+                    FaIcon(
+                      FontAwesomeIcons.telegram,
+                      size: 60,
+                      color: Colors.blue[300],
+                    ),
+                    GestureDetector(
+                      onTap: () => launcherURL(
+                          Uri.parse('https://www.linkedin.com/in/issakha-cisse'),
+                          true),
+                      child: const FaIcon(
+                        FontAwesomeIcons.linkedin,
+                        size: 60,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
+                ),
+                const Text(
+                  '#CISSE410',
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
           ),
         ),
       ),
