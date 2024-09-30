@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
+
+import '../utils/launch_url.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({super.key, required this.news});
@@ -10,29 +11,11 @@ class NewsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void launcherURL(Uri uri, bool inApp) async {
-      try {
-        if (await canLaunchUrl(uri)) {
-          if (inApp) {
-            await launchUrl(uri, mode: LaunchMode.inAppBrowserView);
-          } else {
-            await launchUrl(uri, mode: LaunchMode.externalApplication);
-          }
-        }
-      } catch (e) {
-        debugPrint(e.toString());
-      }
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
           '${news['heading']}',
-          style: const TextStyle(
-            color: Colors.white,
-          ),
         ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),

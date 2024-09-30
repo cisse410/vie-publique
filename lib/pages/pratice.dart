@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intro_provider_state_management/models/news.dart';
+import 'package:intro_provider_state_management/pages/about_us.dart';
 import 'package:intro_provider_state_management/widgets/card_pratice.dart';
 import 'package:provider/provider.dart';
 
@@ -13,11 +14,26 @@ class Pratice extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Vie Publique',
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
         ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        centerTitle: true,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AboutUs(),
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.more_vert,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
       ),
       body: RefreshIndicator(
         onRefresh: () async {},
