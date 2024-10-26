@@ -56,6 +56,7 @@ class DocumentsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Documents'),
+        backgroundColor: Colors.green,
       ),
       body: Column(
         children: [

@@ -1,9 +1,9 @@
 import 'package:amplitude_flutter/amplitude.dart';
 import 'package:flutter/material.dart';
+import 'package:intro_provider_state_management/widgets/main_navigation_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'models/news.dart';
-import 'pages/pratice.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.teal,
+          backgroundColor: Colors.green,
           centerTitle: true,
           titleTextStyle: TextStyle(
             color: Colors.white,
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider(
         create: (context) => News(),
-        builder: (context, child) => const Pratice(),
+        builder: (context, child) => const MainNavigationScreen(),
       ),
     );
   }
