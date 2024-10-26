@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intro_provider_state_management/models/news.dart';
-import 'package:intro_provider_state_management/pages/about_us.dart';
 import 'package:intro_provider_state_management/widgets/card_pratice.dart';
+import 'package:intro_provider_state_management/widgets/drawer_menu.dart';
 import 'package:provider/provider.dart';
 
 class Pratice extends StatelessWidget {
@@ -15,26 +15,8 @@ class Pratice extends StatelessWidget {
         title: const Text(
           'Vie Publique',
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AboutUs(),
-                  ),
-                );
-              },
-              child: const Icon(
-                Icons.more_vert,
-                color: Colors.white,
-              ),
-            ),
-          )
-        ],
       ),
+      drawer: const DrawerMenu(),
       body: RefreshIndicator(
         onRefresh: () async {},
         child: Center(
