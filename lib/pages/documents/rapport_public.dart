@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+
+import '../../widgets/custom_text_field.dart';
+
+class RapportPublics extends StatelessWidget {
+  const RapportPublics({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    TextEditingController controller = TextEditingController();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Rapport Publics"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text("Rapport Publics"),
+          CustomTextField(
+            controller: controller,
+            hintText: "Rechercher",
+            labelText: "Rechercher",
+            keyboardType: TextInputType.text,
+            prefixIcon: const Icon(LucideIcons.search),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 15,
+              itemBuilder: (BuildContext context, int index) {
+                return Card(
+                  margin: const EdgeInsets.all(10),
+                  color: Colors.green.shade100,
+                  child: ListTile(
+                    leading: const Icon(
+                      LucideIcons.file,
+                      color: Colors.green,
+                    ),
+                    trailing: const Icon(LucideIcons.arrowRight),
+                    title: Text("Rapport n° ${index + 1}"),
+                    subtitle: const Text('Fonctionnement de l\'état...'),
+                    onTap: () {},
+                  ),
+                );
+              },
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intro_provider_state_management/pages/about_us.dart';
+import 'package:intro_provider_state_management/pages/document_page.dart';
 import 'package:intro_provider_state_management/widgets/drawer_menu_item.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
@@ -52,7 +53,15 @@ class DrawerMenu extends StatelessWidget {
           DrawerMenuItem(
             icon: LucideIcons.book,
             title: "DOCUMENTS",
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DocumentsPage(),
+                ),
+              );
+            },
           ),
           const Divider(),
           DrawerMenuItem(
