@@ -34,7 +34,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       'icon': Icons.contact_page_outlined,
       'label': 'Annuaires',
       'subtitle': 'Nominations gouvernement...',
-      'page': const DirectoryPage(),
+      'page': DirectoryPage(),
     },
     {
       'icon': Icons.folder_outlined,
